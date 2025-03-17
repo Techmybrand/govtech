@@ -1,119 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>GovTech Africa</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://govtech-website.netlify.app/favicon.png" sizes="any">
+  <title>Govtech - under maintenance</title>
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%; /* 1rem = 10px */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 2rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem 4rem;
+      background-color: #0f0f0f;
+    }
+
+    .logo {
+      width: 12rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      font-size: 1rem;
+      margin-left: 0.5rem;
+      opacity: 0.8;
+    }
+
+    /* Main content styles */
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+    }
+
+    .error-container {
+      background-color: rgba(15, 15, 15, 0.8);
+      border-radius: 1rem;
+      padding: 5rem;
+      max-width: 100rem;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+
+    .error-code {
+      font-size: 1.6rem;
+      color: #bef2be;
+      margin-bottom: 2rem;
+    }
+
+    .error-title {
+      font-size: 4.2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    .error-message {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      margin-bottom: 4rem;
+      opacity: 0.9;
+    }
+
+    .error-graphics {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+    }
+
+    .circle {
+      position: absolute;
+      border: 2px solid #bef2be;
+      border-radius: 50%;
+    }
+
+    .circle-1 {
+      width: 20rem;
+      height: 20rem;
+      top: 40%;
+      left: 20%;
+    }
+
+    .circle-2 {
+      width: 30rem;
+      height: 30rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .circle-3 {
+      width: 15rem;
+      height: 15rem;
+      top: 40%;
+      right: 25%;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: #1b1e21;
+      padding: 5rem 4rem 0;
+      position: relative;
+    }
+
+    .grad {
+      height: 15.2rem;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(190, 242, 190, 0.5);
+      box-shadow: 1px 4px 100px rgba(190, 242, 190, 0.8);
+      filter: blur(150px);
+      z-index: 1;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4rem;
+      position: relative;
+      z-index: 2;
+      max-width: 1440px;
+      margin-inline: auto;
+    }
+
+    .footer-left {
+      margin-bottom: 3rem;
+    }
+
+    .footer-logo {
+      margin-bottom: 2rem;
+      width: 12rem;
+    }
+
+    .footer-logo img {
+      width: 100%;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #333;
+      border-radius: 50%;
+    }
+
+    .social-icon img {
+      width: 60%;
+      height: 60%;
+    }
+
+    .copyright {
+      font-size: 1.4rem;
+      opacity: 0.8;
+    }
+
+    .footer-nav-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+    .footer-nav ul li {
+      padding: 0.8rem 0;
+    }
+
+    .footer-nav ul li a {
+      font-size: 1.4rem;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    .footer-nav ul li a:hover {
+      opacity: 1;
+    }
+
+    .footer-logo-large {
+      margin-top: 6rem;
+      opacity: 0.4;
+      width: 100%;
+      /* max-width: 40rem; */
+    }
+
+    /* Media queries */
+    @media (max-width: 768px) {
+
+      .footer-logo-large {
+        margin-top: 3rem;
+      }
+
+      .error-title {
+        font-size: 3.2rem;
+      }
+
+      .circle-1 {
+        width: 15rem;
+        height: 15rem;
+      }
+
+      .circle-2 {
+        width: 20rem;
+        height: 20rem;
+      }
+
+      .circle-3 {
+        width: 10rem;
+        height: 10rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 2rem;
+      }
+
+      .footer {
+        padding: 4rem 2rem 0;
+      }
+
+      .footer-content{
+        gap: 1.2rem;
+      }
+
+      .footer-nav-container {
+        grid-template-columns: 1fr;
+      }
+
+      .error-container {
+        padding: 3rem 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-	
-	<!--  -->
-	<div class="simpleslide100">
-		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg01.jpg');"></div>
-		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg02.jpg');"></div>
-		<div class="simpleslide100-item bg-img1" style="background-image: url('images/bg03.jpg');"></div>
-	</div>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="https://govtech-website.netlify.app/images/logo.png" alt="Govtech">
+    </div>
+  </header>
 
-	<div class="size1 overlay1">
-		<!--  -->
-		<div class="size1 flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-50">
-			<h3 class="l1-txt1 txt-center p-b-25">
-				Maintenace Mode
-			</h3>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="error-container">
+      <h1 class="error-title">Under maintenance</h1>
+      <p class="error-message">
+        Sorry, We're currently under maintenance
+      </p>
+      <a href="mailto:Info@govtechafrica.com">Contact Us</a>
+      <div class="error-graphics">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+      </div>
+    </div>
+  </main>
 
-			<p class="m2-txt1 txt-center p-b-48">
-				Hello, we are currently making some updates and improvements on our website. <br /> Kindly check back after the estimated time.
-			</p>
-
-			<div class="flex-w flex-c-m cd100 p-b-33">
-				<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
-					<span class="l2-txt1 p-b-9 days">5</span>
-					<span class="s2-txt1">Days</span>
-				</div>
-
-				<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
-					<span class="l2-txt1 p-b-9 hours">17</span>
-					<span class="s2-txt1">Hours</span>
-				</div>
-
-				<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
-					<span class="l2-txt1 p-b-9 minutes">50</span>
-					<span class="s2-txt1">Minutes</span>
-				</div>
-
-				<div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
-					<span class="l2-txt1 p-b-9 seconds">39</span>
-					<span class="s2-txt1">Seconds</span>
-				</div>
-			</div>
-
-			<form class="w-full flex-w flex-c-m validate-form">
-
-				<div class="wrap-input100 validate-input where1" data-validate = "Valid email is required: ex@abc.xyz">
-					<input class="input100 placeholder0 s2-txt2" type="text" name="email" placeholder="Enter Email Address">
-					<span class="focus-input100"></span>
-				</div>
-				
-				
-				<button class="flex-c-m size3 s2-txt3 how-btn1 trans-04 where1">
-					Subscribe
-				</button>
-			</form>
-		</div>
-	</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="https://govtech-website.netlify.app/images/logo.png" alt="Govtech">
+        </div>
+        <div class="social-links">
+          <a href="https://x.com/govtech_africa?s=11&t=KTJXTYdG3vn_ikVbROJCCg" target="_blank" class="social-icon">
+            <img src="https://govtech-website.netlify.app/svgs/twitter.svg" alt="Twitter">
+          </a>
+          <a href="https://www.instagram.com/govtech_africa?igsh=N3ozMjZ6cWNhZzlm&utm_source=qr" target="_blank" class="social-icon">
+            <img src="https://govtech-website.netlify.app/svgs/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/govtech-africa-inc/" target="_blank" class="social-icon">
+            <img src="https://govtech-website.netlify.app/svgs/linkedin.svg" alt="LinkedIn">
+          </a>
+        </div>
+        <div class="copyright">
+          © 2025 Govtech Africa Inc.
+        </div>
+      </div>
 
 
-
-	
-
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/moment.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script>
-		$('.cd100').countdown100({
-			/*Set Endtime here*/
-			/*Endtime must be > current time*/
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: 3,
-			endtimeHours: 18,
-			endtimeMinutes: 0,
-			endtimeSeconds: 0,
-			timeZone: "" 
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
+    </div>
+    <div class="footer-logo-large">
+      <img src="https://govtech-website.netlify.app/images/govtechafri.png" alt="Govtech Africa">
+    </div>
+    <div class="grad"></div>
+  </footer>
 </body>
 </html>
